@@ -94,15 +94,55 @@ td{padding:var(--spacing_8);border-bottom:1px solid var(--line);vertical-align:t
 .empty{padding:80px 20px;text-align:center;color:var(--ink3)}
 footer{margin-top:var(--spacing_32);font-size:12px;line-height:18px;color:var(--ink3);border-top:1px solid var(--line);padding-top:var(--spacing_16)}
 footer b{color:var(--ink2)}
-.fig{border:1px solid var(--line);border-radius:var(--radius_8);padding:var(--spacing_12);background:var(--neutral-20)}
-.fig .l{font-size:10.5px;color:var(--ink2);margin-bottom:8px}
-.figs{display:flex;flex-wrap:wrap;gap:12px}
-.ff{width:240px;max-width:100%}
-.ff img{width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:var(--radius_6);border:1px solid var(--line);display:block;background:var(--neutral-30)}
-.noimg{aspect-ratio:2/1;border-radius:var(--radius_6);border:1px dashed var(--line2);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink3)}
-.fn{font-size:12px;font-weight:600;margin:6px 0 2px}
-.fl{display:block;font-size:12px;line-height:20px;color:var(--primary-90);font-weight:600;text-decoration:none}
+/* ---- Detalle ---- */
+.det{padding:var(--spacing_32)}
+.dh{padding-bottom:var(--spacing_20);border-bottom:1px solid var(--line)}
+.dh1{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.dh h2{margin:0;font-size:22px;line-height:28px;font-weight:600;font-family:var(--mono)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.meta span{font-size:12px;line-height:18px;padding:2px 10px;border-radius:var(--radius_full);background:var(--neutral-30);color:var(--ink2)}
+.sum{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:var(--spacing_24);padding:16px 20px;border:1px solid var(--line);border-left:4px solid;border-radius:var(--radius_8);background:var(--neutral-20)}
+.sl{font-size:12px;line-height:16px;color:var(--ink2);margin-bottom:4px}
+.sv{font-size:16px;line-height:22px;font-weight:600}
+.sv.num{font-size:26px;line-height:32px;font-variant-numeric:tabular-nums}
+.sn{text-align:right;padding-left:24px;border-left:1px solid var(--line)}
+.ds{margin-top:var(--spacing_40)}
+.ds h3{margin:0 0 var(--spacing_16);font-size:15px;line-height:20px;font-weight:600;color:var(--ink)}
+.ctx{margin:0 0 12px;font-size:14px;line-height:22px;max-width:72ch}
+.ctx span{display:block;font-size:12px;line-height:16px;color:var(--ink2);margin-bottom:2px}
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:16px}
+.ff{display:flex;gap:20px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:var(--radius_12);background:var(--card)}
+.fimg{flex:0 0 220px;display:block}
+.fimg img{width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:var(--radius_8);display:block;border:1px solid var(--line)}
+.fimg:focus-visible{outline:2px solid var(--primary-80);outline-offset:3px;border-radius:var(--radius_8)}
+.noimg{aspect-ratio:2/1;border-radius:var(--radius_8);border:1px dashed var(--line2);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--ink3)}
+.fb{min-width:0}
+.fn{font-size:14px;line-height:20px;font-weight:600;margin-bottom:10px}
+.fl{display:flex;gap:8px;align-items:center;font-size:13px;line-height:20px;color:var(--primary-90);font-weight:600;text-decoration:none;padding:3px 0}
+.fl b{font-size:11px;font-weight:600;color:var(--ink2);background:var(--neutral-30);border-radius:var(--radius_4);padding:0 6px;min-width:30px;text-align:center}
 .fl:hover{text-decoration:underline}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius_8)}
+.tw table{margin:0;min-width:680px}
+.tw th{background:var(--neutral-20);padding:10px 14px;text-transform:none;letter-spacing:0;font-size:12px;font-weight:600}
+.tw td{padding:12px 14px}
+.tw tr:last-child td{border-bottom:0}
+.cmp .fld{font-family:var(--mono);font-size:12px;color:var(--ink2);font-weight:600}
+.val{font-size:12.5px}
+.pc{margin-left:8px}
+.path{margin-top:12px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;font-size:12px;color:var(--ink2)}
+.path code{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--neutral-30);padding:3px 8px;border-radius:var(--radius_4);word-break:break-all}
+.cg{border:1px solid var(--line);border-radius:var(--radius_8);overflow:hidden}
+.cg+.cg{margin-top:16px}
+.cgh{padding:12px 16px;display:flex;flex-direction:column;gap:2px;font-size:13px;line-height:18px}
+.cgh span{color:var(--ink2)}
+.cg .tw{border:0;border-top:1px solid var(--line);border-radius:0}
+.cgt tr.src td{background:var(--neutral-20)}
+.cgt tr.src .tagid{color:var(--ink2);font-family:inherit;font-weight:600}
+.cgt tr.mio td{background:var(--primary-20)}
+.tagid{display:block;font-family:var(--mono);font-size:12px;font-weight:600}
+.tagid em{font-style:normal;font-family:-apple-system,'Inter',sans-serif;font-size:10px;font-weight:600;color:var(--primary-90);margin-left:4px}
+.tsub{display:block;font-size:11px;color:var(--ink3);margin-top:2px}
+@media(max-width:760px){.det{padding:var(--spacing_20)}.figs{grid-template-columns:1fr}.ff{flex-direction:column;align-items:stretch}.fimg{flex-basis:auto}.sum{grid-template-columns:1fr}.sn{text-align:left;padding-left:0;border-left:0}}
 </style></head><body><div class="wrap">
 <header>
 <p class="eyebrow">tyta · agente de tagging de Tyba</p>
@@ -231,54 +271,63 @@ function draw(){pintaCards();const rows=filt();document.getElementById('cnt').te
  document.getElementById('list').innerHTML=h||'<div class="empty">Sin resultados con estos filtros.</div>';}
 window.pick=function(n){sel=n;const r=R.find(x=>x.n===n);draw();
  const c=EC[r.e];
- let h='<div class="hd"><h2>'+(r.i||'(sin ID)')+'</h2>'+
-  '<span class="pill" style="background:'+c[0]+';color:'+c[1]+'">'+r.st+'</span>'+
-  '<span style="font-size:12px;color:var(--ink2)">'+P[r.p]+' · '+(S[r.s]||'—')+''+(r.pa?' · '+r.pa:'')+'</span></div>';
- if(r.a)h+='<div class="acc" style="background:'+c[0]+';border-left:3px solid '+c[1]+'"><b>Acción sugerida:</b> '+r.a+'</div>';
- h+='<div class="cov">'+
-  '<div class="cv"><div class="l">Eventos</div><div class="v">'+fmt(r.ev)+'</div></div>'+
-  '';
+ const meta=[P[r.p],S[r.s],r.pa?r.pa.toUpperCase():''].filter(Boolean);
+ let h='<div class="dh"><div class="dh1"><h2>'+(r.i||'(sin ID)')+'</h2>'+
+  '<span class="pill" style="background:'+c[0]+';color:'+c[1]+'">'+r.st+'</span></div>'+
+  '<div class="meta">'+meta.map(m=>'<span>'+m+'</span>').join('')+'</div></div>';
+ // Resumen: acción + eventos en una sola franja
+ h+='<div class="sum" style="border-left-color:'+c[1]+'">'+
+  '<div class="si"><div class="sl">Acción sugerida</div><div class="sv">'+(r.a||'—')+'</div></div>'+
+  '<div class="si sn"><div class="sl">Eventos en Analytics</div><div class="sv num">'+fmt(r.ev)+'</div></div></div>';
+ // Contexto de negocio
+ if(r.b||r.u){h+='<section class="ds"><h3>Para qué sirve</h3>';
+  if(r.b)h+='<p class="ctx"><span>Pregunta de negocio</span>'+r.b+'</p>';
+  if(r.u)h+='<p class="ctx"><span>Caso de uso</span>'+r.u+'</p>';
+  h+='</section>';}
+ // Diseño
+ h+='<section class="ds"><h3>Diseño en Figma</h3>';
  if(r.fg&&r.fg.length){const byF={},ord=[];
   r.fg.forEach(x=>{const k=x[2]||x[1];if(!byF[k]){byF[k]=[];ord.push(k);}byF[k].push(x);});
-  h+='<div class="fig"><div class="l">Diseño en Figma</div><div class="figs">'+ord.map(k=>{const f=D.F[k]||{},L=byF[k];
-   return '<div class="ff">'+(f.img?'<a href="'+L[0][1]+'" target="_blank" rel="noopener"><img src="'+f.img+'" alt="Portada de '+(f.n||'archivo de Figma')+'" loading="lazy"></a>':'<div class="noimg">Sin portada</div>')+
-    '<div class="fn">'+(f.n||'Archivo de Figma')+'</div>'+
-    L.map(x=>'<a class="fl" href="'+x[1]+'" target="_blank" rel="noopener">'+(x[0]?x[0]+' · ':'')+'Abrir en Figma ↗</a>').join('')+'</div>';}).join('')+'</div></div>';}
- else h+='<div class="fig"><div class="l">Diseño en Figma</div><span class="na">sin enlace en el tracking plan</span></div>';
- h+='</div>';
- h+='<table><thead><tr><th style="width:126px">Campo</th><th>Tracking plan</th><th>Analytics</th><th>Front End</th></tr></thead><tbody>';
+  h+='<div class="figs">'+ord.map(k=>{const f=D.F[k]||{},L=byF[k];
+   return '<div class="ff">'+(f.img?'<a class="fimg" href="'+L[0][1]+'" target="_blank" rel="noopener"><img src="'+f.img+'" alt="Portada de '+(f.n||'archivo de Figma')+'" loading="lazy"></a>':'<div class="fimg noimg">Sin portada</div>')+
+    '<div class="fb"><div class="fn">'+(f.n||'Archivo de Figma')+'</div>'+
+    L.map(x=>'<a class="fl" href="'+x[1]+'" target="_blank" rel="noopener">'+(x[0]?'<b>'+x[0]+'</b>':'')+'Abrir en Figma ↗</a>').join('')+'</div></div>';}).join('')+'</div>';}
+ else h+='<p class="na">Este tag no tiene enlace a Figma en el tracking plan.</p>';
+ h+='</section>';
+ // Comparación
+ h+='<section class="ds"><h3>Comparación por campo</h3><div class="tw"><table class="cmp"><thead><tr><th style="width:150px">Campo</th><th>Tracking plan</th><th>Analytics</th><th>Front End</th></tr></thead><tbody>';
  r.c.forEach((f,ix)=>{const nom=CAMPOS[ix];
   const cell=(v,s,esId)=>{const cc=col(s);
    if(v===null||v===undefined)return '<td><span class="na">sin correspondencia</span></td>';
    if(esId&&(!v||v==='NA'))return '<td><span class="na">sin ID en la fuente</span></td>';
    return '<td>'+(v?'<span class="val">'+v+'</span>':'<span class="na">vacío</span>')+
     ((s!==null&&s!==undefined)?'<span class="pc" style="background:'+cc[0]+';color:'+cc[1]+'">'+s+'%</span>':'')+'</td>';};
-  h+='<tr'+(nom==='ID'?' style="background:var(--neutral-20)"':'')+'><td class="fld"><b>'+nom+'</b></td>'+
+  h+='<tr><td class="fld">'+nom+'</td>'+
      '<td>'+(f[0]?'<span class="val">'+f[0]+'</span>':'<span class="na">vacío</span>')+'</td>'+
      cell(f[1],f[3],nom==='ID')+cell(f[2],f[4],nom==='ID')+'</tr>';});
- h+='</tbody></table>';
- if(r.cg)r.cg.forEach(g=>{
-   const c1=g.din?['var(--primary-30)','var(--primary-100)']:['var(--yellow-20)','var(--yellow-90)'];
-   h+='<div class="sec"><h3 style="margin:16px 0 3px;font-size:14px;color:'+c1[1]+'">'+
-      (g.din?'ℹ️ 1:N programático':'⚠️ Colisión')+' · mismo registro en '+(g.src==='FE'?'Front End':'Analytics')+'</h3>'+
-      '<p style="margin:0 0 8px;font-size:12px;color:var(--ink2)">'+g.n+' tags del plan apuntan a este registro.'+
-      (g.din?' La implementación es paramétrica: correcto por diseño, no hay nada que consolidar.':' Revisar cuál corresponde de verdad.')+'</p>';
-   h+='<div class="fuente"><b>Lo que hay en la fuente</b><br>';
-   ['ID','Event','Screen_Figma','Screen_Analytics','Object'].forEach((k,ix)=>{
-     h+='&nbsp;&nbsp;'+k.padEnd(18).replace(/ /g,'&nbsp;')+': '+(g.f[ix]||'—')+'<br>';});
-   h+='</div>';
-   h+='<table style="margin-top:8px"><thead><tr><th style="width:118px">Tag</th>'+
-      ['ID','Event','Screen_Figma','Screen_Analytics','Object'].map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>';
+ h+='</tbody></table></div>';
+ if(r.fp)h+='<div class="path"><span>Archivo en Front End</span><code>'+r.fp+'</code></div>';
+ h+='</section>';
+ // Colisiones
+ if(r.cg&&r.cg.length){
+  h+='<section class="ds"><h3>Colisiones e implementaciones compartidas</h3>';
+  r.cg.forEach(g=>{
+   const c1=g.din?['var(--primary-20)','var(--primary-100)']:['var(--yellow-20)','var(--yellow-90)'];
+   const src=g.src==='FE'?'Front End':'Analytics';
+   h+='<div class="cg"><div class="cgh" style="background:'+c1[0]+';color:'+c1[1]+'">'+
+      '<b>'+(g.din?'1:N programático':'Colisión')+' en '+src+'</b>'+
+      '<span>'+g.n+' tags del plan apuntan al mismo registro. '+
+      (g.din?'La implementación es paramétrica: es correcto por diseño.':'Revisa cuál corresponde de verdad.')+'</span></div>';
+   h+='<div class="tw"><table class="cgt"><thead><tr><th style="width:150px">Tag</th>'+
+      CAMPOS.map(x=>'<th>'+x+'</th>').join('')+'</tr></thead><tbody>';
+   h+='<tr class="src"><td><span class="tagid">Registro en '+src+'</span></td>'+g.f.map(v=>'<td><span class="val">'+(v||'—')+'</span></td>').join('')+'</tr>';
    g.c.forEach(x=>{const mio=x[3]===r.n;
-     h+='<tr'+(mio?' style="background:var(--primary-20)"':'')+'><td><span class="val" style="font-weight:'+(mio?'700':'400')+'">'+(x[0]||'sin ID')+'</span>'+
-        (mio?'<span class="pc" style="background:var(--neutral-10);color:var(--primary-90)">este</span>':'')+
-        '<br><span style="font-size:10px;color:var(--ink3)">'+x[1]+' · '+(x[2]||'—')+'</span></td>';
-     x[4].forEach(v=>{h+='<td><span class="val">'+(v||'<span class="na">vacío</span>')+'</span></td>';});
+     h+='<tr'+(mio?' class="mio"':'')+'><td><span class="tagid">'+(x[0]||'sin ID')+(mio?' <em>este tag</em>':'')+'</span>'+
+        '<span class="tsub">'+x[1]+(x[2]?', '+x[2]:'')+'</span></td>';
+     x[4].forEach(v=>{h+='<td>'+(v?'<span class="val">'+v+'</span>':'<span class="na">vacío</span>')+'</td>';});
      h+='</tr>';});
-   h+='</tbody></table></div>';});
- if(r.fp)h+='<div class="box" style="background:var(--neutral-100);color:var(--neutral-20);border-left:3px solid var(--primary-80)"><b style="color:var(--primary-40)">Archivo en Front End</b><br><span style="font-family:var(--mono);font-size:11px">'+r.fp+'</span></div>';
- if(r.b)h+='<div class="box" style="background:var(--primary-20);border-left:3px solid var(--primary-100)"><b>Pregunta de negocio:</b> '+r.b+'</div>';
- if(r.u)h+='<div class="box" style="background:var(--primary-20);border-left:3px solid var(--primary-100)"><b>Use case:</b> '+r.u+'</div>';
+   h+='</tbody></table></div></div>';});
+  h+='</section>';}
  const d=document.getElementById('det');d.innerHTML=h;d.scrollTop=0;};
 draw();
 </script></body></html>
