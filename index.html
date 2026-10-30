@@ -165,6 +165,10 @@ footer b{color:var(--ink2)}
 .otx .sl{margin:0}
 .otx code{font-family:var(--mono);font-size:11px;background:var(--neutral-30);padding:1px 5px;border-radius:var(--radius_4);margin-left:4px}
 .otv{font-size:15px;line-height:22px;font-weight:600;color:var(--ink)}
+.idp{font-size:10px;line-height:15px;font-weight:600;padding:0 6px;border-radius:var(--radius_4);white-space:nowrap}
+.id-ok{background:var(--green-20);color:var(--green-90)}
+.id-no{background:var(--orange-20);color:var(--orange-90)}
+.id-mix{background:var(--yellow-20);color:var(--yellow-90)}
 </style></head><body><div class="wrap">
 <header>
 <p class="eyebrow">tyta · agente de tagging de Tyba</p>
@@ -175,6 +179,7 @@ footer b{color:var(--ink2)}
   <span class="seg"><button class="sg on" data-md="lista">Lista</button><button class="sg" data-md="arbol">Árbol</button></span>
   <select id="fpr"><option value="">Todos los productos</option></select>
   <select id="fsq"><option value="">Todos los squads</option></select>
+  <select id="fid" title="¿La implementación envía el ID del tag?"><option value="">ID en la fuente: todos</option><option value="ok">Con ID</option><option value="no">Sin ID</option><option value="mix">ID parcial</option><option value="na">No encontrado en fuentes</option></select>
   <input type="text" id="fq" placeholder="Buscar ID, pantalla, object o texto…">
   <span id="ejeWrap" style="display:none"><select id="feje"><option value="p">Producto → flujo → pantalla</option><option value="ev">Flujo → producto → pantalla</option><option value="sf">Pantalla → flujo → producto</option><option value="s">Squad → producto → flujo</option></select></span>
   <span class="chip" id="ccol">Solo colisiones</span>
@@ -240,10 +245,15 @@ document.getElementById('cnn').onclick=function(){oNN=!oNN;this.classList.toggle
 document.getElementById('cfc').onclick=function(){oFC=!oFC;this.classList.toggle('on');draw();};
 [fpr,fsq].forEach(e=>e.onchange=draw);fq.oninput=draw;
 const nrm=x=>String(x||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const hasId=v=>v!==null&&v!==undefined&&v!==''&&v!=='NA';
+R.forEach(r=>{const f=[r.c[0][1],r.c[0][2]].filter(v=>v!==null&&v!==undefined);
+ r.idst=!f.length?'na':f.every(hasId)?'ok':f.some(hasId)?'mix':'no';});
+const fid=document.getElementById('fid');fid.onchange=draw;
+const IDP={ok:['id-ok','ID'],no:['id-no','sin ID'],mix:['id-mix','ID parcial']};
 R.forEach(r=>{r._h=nrm(r.i+' '+r.c.map(c=>c[0]+' '+(c[1]||'')+' '+(c[2]||'')).join(' '));r._o=nrm(r.ot);});
 function baseFilt(){const q=nrm(fq.value.trim());
  return R.filter(r=>(!fpr.value||P[r.p]===fpr.value)&&(!fsq.value||S[r.s]===fsq.value)
-  &&(!oCol||r.col)&&(!oNN||r.nn)&&(!oFC||r.fc)
+  &&(!oCol||r.col)&&(!oNN||r.nn)&&(!oFC||r.fc)&&(!fid.value||r.idst===fid.value)
   &&(!q||r._h.includes(q)||r._o.includes(q)));}
 function filt(){return baseFilt().filter(r=>!fEst||r.e===fEst);}
 let modo='lista',eje='p';const abierto={};
@@ -265,6 +275,7 @@ function leafHTML(r){const c=EC[r.e];
   (r.ev?'<span style="font-size:10px;color:var(--neutral-70)">'+fmt(r.ev)+'</span>':'')+
   (r.col?'<span class="pill" style="background:var(--yellow-20);color:var(--yellow-90)">col</span>':'')+
   (r.nn?'<span class="pill" style="background:var(--primary-30);color:var(--primary-100)">1:N</span>':'')+
+  (IDP[r.idst]?'<span class="idp '+IDP[r.idst][0]+'" title="'+({ok:'La implementación envía el ID del tag',no:'Se encontró en la fuente, pero sin ID',mix:'Una fuente envía el ID y la otra no'})[r.idst]+'">'+IDP[r.idst][1]+'</span>':'')+
   otHit(r)+'</div>';}
 function esc(x){return String(x).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[m]);}
 function otHit(r){const q=nrm(fq.value.trim());if(!q||!r.ot||!r._o.includes(q)||r._h.includes(q))return '';
